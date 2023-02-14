@@ -1,6 +1,6 @@
 import speech_recognition as sr # Knihovna, která má přístup k databázím ke slovům v různých jazycích. Pomocí ní je nahrávka převedena na datový typ string.
 import json as js # Tato vestavěná knihovna není přímo nutná, ale nahrávka, kterou jsme pomocí speech_recognitu rozšifrovali se poté zapíše do textové souboru poloha.txt zapíše jako JSON string ("place": "adresa")
-from promenne import to_roman,cislice, find_numbers_before_ulice # Při requestu na server (https://api.mapy.cz/geocode) se čísla ulic píší v římských číslicích. Pokud tak není učiněno server nám vrátí buď špatné kordinace nebo nevrátí vůbec žádné
+from Functions import to_roman,cislice, find_numbers_before_ulice # Při requestu na server (https://api.mapy.cz/geocode) se čísla ulic píší v římských číslicích. Pokud tak není učiněno server nám vrátí buď špatné kordinace nebo nevrátí vůbec žádné
 def voice_to_text(path): # Funkce, která se stará pro převod nahrávky na datový typ string. Jako vstupní argument je zadána cesta k nahrávce.
     recognizer = sr.Recognizer()
     audio_ex = sr.AudioFile(path)
